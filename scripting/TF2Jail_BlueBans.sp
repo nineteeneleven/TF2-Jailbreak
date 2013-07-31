@@ -498,7 +498,7 @@ public DB_Callback_Connect(Handle:owner, Handle:hndl, const String:error[], any:
 			Format(g_sLogTableName, sizeof(g_sLogTableName), "TF2Jail_BlueBan_Logs");
 		}
 		
-		Format(sQuery, sizeof(sQuery), "CREATE TABLE IF NOT EXISTS %s (timestamp INT, offender_steamid VARCHAR(22), offender_name VARCHAR(32), admin_steamid VARCHAR(22), admin_name VARCHAR(32), bantime INT(16), timeleft INT(16), reason VARCHAR(200), PRIMARY KEY (timestamp))", g_sLogTableName);
+		Format(sQuery, sizeof(sQuery), "CREATE TABLE IF NOT EXISTS test (`id` INT NOT NULL, `timestamp` INT, `offender_steamid` VARCHAR(22), `offender_name` VARCHAR(32), `admin_steamid` VARCHAR(22), `admin_name` VARCHAR(32), `bantime` INT(16), `timeleft` INT(16), `reason` VARCHAR(200), PRIMARY KEY (id));", g_sLogTableName);
 		SQL_TQuery(gH_BanDatabase, DB_Callback_Create, sQuery);
 	}
 }
